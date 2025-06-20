@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('hasil_seleksis', function (Blueprint $table) {
             $table->id();
-            $table->string("pendaftarans_id");
-            $table->string("no_kartu");
-            $table->string("status");
+            $table->bigInteger("pendaftarans_id");
+            $table->string("no_kartu",50);
+            $table->string("status",50);
             $table->timestamps();
         });
     }

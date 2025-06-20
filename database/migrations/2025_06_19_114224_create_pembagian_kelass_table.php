@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('pembagian_kelass', function (Blueprint $table) {
             $table->id();
-            $table->string("kelass_id");
-            $table->string("pendaftarans_id");
-            $table->string("gurus_id");
+            $table->bigInteger("kelass_id");
+            $table->bigInteger("pendaftarans_id");
+            $table->bigInteger("gurus_id");
             $table->timestamps();
         });
     }

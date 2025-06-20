@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('daftar_ulangs', function (Blueprint $table) {
             $table->id();
-            $table->string("pendaftarans_id");
+            $table->bigInteger("pendaftarans_id");
             $table->date("tgl_pendaftaran");
             // berkas
             $table->timestamps();

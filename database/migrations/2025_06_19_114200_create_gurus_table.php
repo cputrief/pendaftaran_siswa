@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('gurus', function (Blueprint $table) {
             $table->id();
-            $table->string("nm_guru");
-            $table->string("jabatan");
-            $table->string("jmlh_guru");
+            $table->string("nm_guru",50);
+            $table->string("jabatan",50);
+            $table->string("jmlh_guru",50);
             $table->timestamps();
         });
     }

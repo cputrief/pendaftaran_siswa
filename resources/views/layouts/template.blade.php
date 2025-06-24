@@ -45,7 +45,7 @@ Coded by www.creative-tim.com
           <!-- <p>CT</p> -->
         </a>
         <a href="https://www.creative-tim.com" class="simple-text logo-normal">
-          Your Logo
+          {{Auth::user()->name}}
           <!-- <div class="logo-image-big">
             <img src="../assets/img/logo-big.png">
           </div> -->
@@ -72,7 +72,7 @@ Coded by www.creative-tim.com
             </a>
           </li>
           <li>
-            <a href="javascript:;">
+            <a href="/guru">
               <i class="nc-icon nc-badge"></i>
               <p>Guru</p>
             </a>
@@ -85,10 +85,20 @@ Coded by www.creative-tim.com
           </li>
           <li>
             <a href="javascript:;">
-              <i class="nc-icon nc-pin-3"></i>
+              <i class="nc-icon nc-bell-55"></i>
               <p>Hasil Seleksi</p>
             </a>
           </li>
+          <li>
+            <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
+            document.getElementById('logout-form').submit();">
+{{ __('Logout') }}
+              <i class="nc-icon nc-button-power"></i>
+          </a>
+          </li>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form>
         </ul>
       </div>
     </div>
@@ -104,7 +114,7 @@ Coded by www.creative-tim.com
                 <span class="navbar-toggler-bar bar3"></span>
               </button>
             </div>
-            <a class="navbar-brand" href="javascript:;">Title</a>
+            <a class="navbar-brand" href="javascript:;">@yield('name-nav')</a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-bar navbar-kebab"></span>
@@ -144,7 +154,7 @@ Coded by www.creative-tim.com
       <div class="content">
         <div class="row">
           <div class="col-md-12">
-            <h3 class="description">Your content here</h3>
+            @yield('conten')
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Gurus;
 
 class guruController extends Controller
 {
@@ -12,6 +13,9 @@ class guruController extends Controller
     public function index()
     {
         //
+        $nomor = 1;
+        $guru = Gurus::all();
+        return view('Gurus.index',compact('guru','nomor'));
     }
 
     /**

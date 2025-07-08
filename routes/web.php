@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\guruController;
+use App\Http\Controllers\pendaftaransController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -15,8 +17,8 @@ use App\Http\Controllers\guruController;
 */
 
 Route::get('/', function () {
-    return view('home');
-})->middleware('auth');
+    return view('layouts.pendaftaran.home');
+});
 
 Route::get('/home', function () {
     return view('home');
@@ -31,6 +33,10 @@ Route::get('/template', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/pendaftaran/create', [pendaftaranController::class, 'create'])->name('pendaftaran.create');
+Route::post('/pendaftaran/store', [pendaftaranController::class, 'store'])->name('pendaftaran.store');
+Route::resource('pendaftaran', PendaftaranController::class);
+
 
 // guru
 Route::get('/guru', [guruController::class, 'index']);

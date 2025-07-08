@@ -3,62 +3,65 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Pendaftarans;
 
-class pendaftaransController extends Controller
+class PendaftaranController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    // Tampilkan data
     public function index()
     {
-        //
+        $data = Pendaftarans::all();
+        return view('home', compact('$data'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
+    // Simpan data baru
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nisn' => 'required|numeric',
+            'nama' => 'required|string|max:255',
+            'nik' => 'required|numeric',
+            'jk' => 'required|in:Laki-laki,Perempuan',
+            'alamat' => 'required|string',
+            'status' => 'required|in:Siswa,Alumni',
+        ]);
+
+        Pendaftarans::create($request->all());
+
+        return redirect()->route('pendaftaran.index')->with('success', 'Data berhasil ditambahkan!');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    // Tampilkan data untuk diedit
+    public function edit($id)
     {
-        //
+        $item = Pendaftarans::findOrFail($id);
+        return response()->json($item);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    // Update data
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nisn' => 'required|numeric',
+            'nama' => 'required|string|max:255',
+            'nik' => 'required|numeric',
+            'jk' => 'required|in:Laki-laki,Perempuan',
+            'alamat' => 'required|string',
+            'status' => 'required|in:Siswa,Alumni',
+        ]);
+
+        $item = Pendaftarans::findOrFail($id);
+        $item->update($request->all());
+
+        return redirect()->route('pendaftaran.index')->with('success', 'Data berhasil diupdate!');
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    // Hapus data
+    public function destroy($id)
     {
-        //
-    }
+        $item = Pendaftarans::findOrFail($id);
+        $item->delete();
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        return redirect()->route('pendaftaran.index')->with('success', 'Data berhasil dihapus!');
     }
 }

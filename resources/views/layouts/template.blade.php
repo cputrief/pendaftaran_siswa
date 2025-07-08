@@ -1,3 +1,4 @@
+
 <!--
 =========================================================
 * Paper Dashboard 2 - v2.0.1
@@ -27,11 +28,14 @@ Coded by www.creative-tim.com
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+  
   <!-- CSS Files -->
   <link href="{{asset ('/assets/css/bootstrap.min.css')}}" rel="stylesheet" />
   <link href="{{asset ('/assets/css/paper-dashboard.css?v=2.0.1')}}" rel="stylesheet" />
+  <link href="{{ asset('css/app.css') }}" rel="stylesheet">
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="{{asset ('/assets/demo/demo.css')}}" rel="stylesheet" />
+  <link href="{{asset ('/assets/css/all.css')}}" rel="stylesheet" />
 </head>
 
 <body class="">
@@ -91,8 +95,8 @@ Coded by www.creative-tim.com
           </li>
           <li>
             <a href="{{ route('logout') }}" class="dropdown-item" onclick="event.preventDefault();
-            document.getElementById('logout-form').submit();">
-{{ __('Logout') }}
+            document.getElementById('logou-form').submit();">
+            {{ __('Logout') }}
               <i class="nc-icon nc-button-power"></i>
           </a>
           </li>
@@ -125,28 +129,8 @@ Coded by www.creative-tim.com
             <form>
               <div class="input-group no-border">
                 <input type="text" value="" class="form-control" placeholder="Search...">
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <i class="nc-icon nc-zoom-split"></i>
-                  </div>
-                </div>
               </div>
             </form>
-            <ul class="navbar-nav">
-              <li class="nav-item btn-rotate dropdown">
-                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="nc-icon nc-bell-55"></i>
-                  <p>
-                    <span class="d-lg-none d-md-block">Some Actions</span>
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
-            </ul>
           </div>
         </div>
       </nav>
@@ -158,7 +142,7 @@ Coded by www.creative-tim.com
           </div>
         </div>
       </div>
-      <footer class="footer" style="position: absolute; bottom: 0; width: -webkit-fill-available;">
+      {{-- <footer class="footer" style="position: absolute; bottom: 0; width: -webkit-fill-available;">
         <div class="container-fluid">
           <div class="row">
             <nav class="footer-nav">
@@ -168,27 +152,36 @@ Coded by www.creative-tim.com
                 <li><a href="https://www.creative-tim.com/license" target="_blank">Licenses</a></li>
               </ul>
             </nav>
-            <div class="credits ml-auto">
+
+
+            {{-- footer --}}
+            {{-- <div class="credits ml-auto">
               <span class="copyright">
                 © 2020, made with <i class="fa fa-heart heart"></i> by Creative Tim
               </span>
-            </div>
-          </div>
+            </div> --}}
+
+
+          {{-- </div>
         </div>
-      </footer>
+      </footer> --}}
     </div>
   </div>
   <!--   Core JS Files   -->
   <script src="{{asset ('/js/core/jquery.min.js')}}"></script>
-  <script src="{{asset ('/js/core/popper.min.js')}}"></script>
+    <script src="{{asset ('/js/core/popper.min.js')}}"></script>
   <script src="{{asset ('/js/core/bootstrap.min.js')}}"></script>
   <script src="{{asset ('/js/plugins/perfect-scrollbar.jquery.min.js')}}"></script>
+  <script src="{{asset('js/all.js')}}"></script>
   <!--  Google Maps Plugin    -->
   <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
   <!-- Chart JS -->
   <script src="{{asset ('/js/plugins/chartjs.min.js')}}"></script>
+  <script src={{ asset('js/app.js') }}></script>
+  
   <!--  Notifications Plugin    -->
   <script src="{{asset ('/js/plugins/bootstrap-notify.js')}}"></script>
+
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="{{asset ('/js/paper-dashboard.min.js?v=2.0.1')}}" type="text/javascript"></script>
 </body>

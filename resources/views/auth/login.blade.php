@@ -1,18 +1,3 @@
-
-<!-- 
-=========================================================
-Light Bootstrap Dashboard PRO - v2.0.1
-=========================================================
-
-Product Page: https://www.creative-tim.com/product/light-bootstrap-dashboard-pro
-Copyright 2019 Creative Tim (https://www.creative-tim.com)
-
-Coded by Creative Tim
-
-=========================================================
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +29,7 @@ The above copyright notice and this permission notice shall be included in all c
     <meta name="twitter:data2" content="$39">
     <meta name="twitter:label2" content="Price">
     <!-- Open Graph data -->
-    <meta property="og:title" content="Light Bootstrap Dashboard PRO by Creative Tim" />
+    <meta property="og:title" content="" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://demos.creative-tim.com/light-bootstrap-dashboard-pro/examples/dashboard.html" />
     <meta property="og:image" content="https://s3.amazonaws.com/creativetim_bucket/products/34/original/opt_lbd_pro_thumbnail.jpg" />

@@ -17,7 +17,7 @@ use App\Http\Controllers\pendaftaransController;
 */
 
 Route::get('/', function () {
-    return view('layouts.pendaftaran.home');
+    return view('layouts.pendaftaran.dashboard');
 });
 
 Route::get('/home', function () {
@@ -28,15 +28,51 @@ Route::get('/template', function () {
     return view('layouts.template');
 });
 
+Route::get('/home', function () {
+    return view('home');
+});
 
+Route::get('/contoh', function () {
+    return view('contoh');
+});
+
+Route::get('/siswa', function () {
+    return view('dt_siswa');
+});
+
+Route::get('/dasboard', function () {
+    return view('dasboard');
+});
+
+Route::get('/form siswa', function () {
+    return view('form_siswa');
+});
+
+Route::get('/guru', function () {
+    return view('dt_guru');
+});
+
+Route::get('/kelas', function () {
+    return view('dt_kelas');
+});
+
+Route::get('/pengumuman', function () {
+    return view('pengumuman');
+});
+
+Route::get('/add admin', function () {
+    return view('add_admin');
+});
+
+Route::get('/login', function () {
+    return view('login');
+});
 
 Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/pendaftaran/create', [pendaftaranController::class, 'create'])->name('pendaftaran.create');
-Route::post('/pendaftaran/store', [pendaftaranController::class, 'store'])->name('pendaftaran.store');
-Route::resource('pendaftaran', PendaftaranController::class);
+// pendaftaran siswa
+// Route::get('/home', [PendaftaranController::class, 'index']);
+// Route::resource('/pendaftarans', PendaftaranController::class)->except(['index']);
 
 
-// guru
-Route::get('/guru', [guruController::class, 'index']);
+// // guru
+// Route::get('/guru', [guruController::class, 'index']);
